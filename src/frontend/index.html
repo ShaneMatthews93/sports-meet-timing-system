@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sport Meet Timer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    button, input {
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    #results {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sport Meet Timing System</h1>
+
+  <button onclick="startRace()">🏁 Start Race</button>
+
+  <div>
+    <input type="text" id="participantName" placeholder="Participant name">
+    <button onclick="submitFinish()">✅ Submit Finish</button>
+  </div>
+
+  <div>
+    <button onclick="fetchResults()">📋 View Results</button>
+    <ul id="results"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
