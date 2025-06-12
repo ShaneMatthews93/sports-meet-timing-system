@@ -14,6 +14,7 @@ function startRace() {
 function submitFinish() {
   const nameInput = document.getElementById('participantName');
   const name = nameInput.value.trim();
+  console.log("Name: ", name)
   if (!name) {
     alert("Please enter a participant name.");
     return;

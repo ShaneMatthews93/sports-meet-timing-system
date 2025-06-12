@@ -16,24 +16,26 @@ def serve_index():
 
 @app.route('/start_race', methods=['POST'])
 def start_race():
-    race_data['Start_time'] = time.time()
-    race_data['finsh_times'] = []
-    return jsonify({'message': 'Race Started', 'start_time': race_data['Start_time']})
+    race_data['start_time'] = time.time()
+    race_data['finish_times'] = [] 
+    return jsonify({'message': 'Race Started', 'start_time': race_data['start_time']})
 
 @app.route('/submit_finish', methods=['POST'])
 def submit_finish():
     data = request.get_json()
     participant = data.get('participant')
     finish_time = time.time()
-    race_data['finsh_times'].append({
+    race_data['finish_times'].append({
         'participant': participant,
         'finish_time': finish_time
     })
+    print(race_data)
     return jsonify({'message': "Finish recorded", 'participant': participant, 'finish_time': finish_time})
 
 @app.route('/results', methods=['GET'])
 def get_results():
     start = race_data.get('start_time')
+    print(start)
     results = [
         {
         'participant': r['participant'],
